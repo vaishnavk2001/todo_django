@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>Task's</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="enter task" name="name">
+        <input type="text" placeholder="priority" name="priority">
+        <input type="submit">
+    </form>
+</body>
+</html>
