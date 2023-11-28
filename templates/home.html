@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
+    <div class="container mt-5 p-3 shadow">
+        <h1>TODO Application</h1>
+    </div>
      <div class="container mt-5 p-3 shadow">
         <div class="row">
             <div class="col-md-4">
@@ -23,18 +26,18 @@
                  <div class="mb-3">
                     <table>
                         <tr>
-                            <td><div class="p-2 border bg-light">Task Name</div></td>
-                            <td><div class="p-2 l-3 border bg-light">priority</div></td>
+                            <th><div class="p-2 border bg-light">Task Name</div></th>
+                            <th><div class="p-2 l-3 border bg-light">priority</div></th>
                         </tr>
                         <tbody>
                             {% for i in obj %}
                             <tr>
                                 <td>{{i.name}}</td>
                                 <td>{{i.priority}}</td>
+                                <td><button class="btn btn-danger " >delete</button></td>
                             </tr>
                             {% endfor %}
                         </tbody>
-
                     </table>
                  </div>
             </div>
