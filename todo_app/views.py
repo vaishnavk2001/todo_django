@@ -8,7 +8,8 @@ def home(request):
     if request.method == 'POST':
         name = request.POST.get('name')
         priority = request.POST.get('priority')
-        obj = Task(name=name, priority=priority)
+        date = request.POST.get('date')
+        obj = Task(name=name, priority=priority, date=date)
         obj.save()
     obj = Task.objects.all()
     return render(request, 'home.html', {'obj': obj})
