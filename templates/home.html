@@ -34,7 +34,7 @@
                             <tr>
                                 <td>{{i.name}}</td>
                                 <td>{{i.priority}}</td>
-                                <td><button class="btn btn-danger " >delete</button></td>
+                                <td><a href="{% url 'delete' i.id %}"><button class="btn btn-danger ">delete</button></a></td>
                             </tr>
                             {% endfor %}
                         </tbody>
