@@ -3,7 +3,7 @@ from .models import Task
 from .forms import Todoforms
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView,DeleteView
 from django.urls import reverse_lazy
 
 
@@ -61,3 +61,11 @@ class TaskUpdateview(UpdateView):
 
     def get_success_url(self):
         return reverse_lazy('details', kwargs={'pk': self.object.id})
+
+#deleteview
+
+class TaskDeleteview(DeleteView):
+    model = Task
+    template_name = 'delete.html'
+    success_url = reverse_lazy('newpath')
+
