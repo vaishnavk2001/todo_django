@@ -40,7 +40,8 @@
                                 <td>{{i.name}}</td>
                                 <td>{{i.priority}}</td>
                                 <td>{{i.date}}</td>
-                                <td><a href="{% url 'delete' i.id %}"><button class="btn btn-danger ">delete</button></a></td>
+                                <td><a href="{% url 'delete' i.id %}"><button class="btn btn-danger">delete</button></a></td>
+                                <td><a href="{% url 'update' i.id %}"><button class="btn btn-success">update</button></a></td>
                             </tr>
                             {% endfor %}
                         </tbody>
