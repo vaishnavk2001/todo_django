@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from .models import Task
 from .forms import Todoforms
 from django.views.generic import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import UpdateView
+from django.urls import reverse_lazy
 
 
 # Create your views here.
@@ -35,8 +38,26 @@ def update(request, uid):
     return render(request, 'edit.html', {'task': task, 'form': form})
 
 
-# generic views
+# generic views(list)
 class TaskListview(ListView):
     model = Task
     template_name = 'home.html'
     context_object_name = 'obj'
+
+
+# detailview
+class TaskDetailview(DetailView):
+    model = Task
+    template_name = 'details.html'
+    context_object_name = 'obj2'
+
+
+# updateview
+class TaskUpdateview(UpdateView):
+    model = Task
+    template_name = 'update.html'
+    context_object_name = 'task'
+    fields = ('name', 'priority', 'date')
+
+    def get_success_url(self):
+        return reverse_lazy('details', kwargs={'pk': self.object.id})

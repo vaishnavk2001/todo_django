@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5 p-3 shadow">
+    <h2>Details</h2>
+    <hr>
+    <h4>Task : {{obj2.name}}</h4>
+    <h4>Priority : {{obj2.priority}}</h4>
+    <h4>Date : {{obj2.date}}</h4>
+    <td><a href="{% url 'delete' obj2.id %}"><button class="btn btn-danger">delete</button></a></td>
+    <td><a href="{% url 'update' obj2.id %}"><button class="btn btn-success">update</button></a></td>
+
+</div>
+{% endblock %}

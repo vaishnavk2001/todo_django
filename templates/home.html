@@ -42,6 +42,7 @@
                                 <td>{{i.date}}</td>
                                 <td><a href="{% url 'delete' i.id %}"><button class="btn btn-danger">delete</button></a></td>
                                 <td><a href="{% url 'update' i.id %}"><button class="btn btn-success">update</button></a></td>
+                                <td><a href="{% url 'details' i.id %}"><button class="btn btn-success">view</button></a></td>
                             </tr>
                             {% endfor %}
                         </tbody>
