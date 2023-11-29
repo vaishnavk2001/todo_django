@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('delete/<int:id>/', views.delete, name='delete'),
-    path('update/<int:uid>/', views.update, name='update')
+    path('update/<int:uid>/', views.update, name='update'),
+    path('newpath/', views.TaskListview.as_view(), name='newpath')
 
 ]

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Task
 from .forms import Todoforms
+from django.views.generic import ListView
 
 
 # Create your views here.
@@ -32,3 +33,10 @@ def update(request, uid):
         form.save()
         return redirect('/')
     return render(request, 'edit.html', {'task': task, 'form': form})
+
+
+# generic views
+class TaskListview(ListView):
+    model = Task
+    template_name = 'home.html'
+    context_object_name = 'obj'
