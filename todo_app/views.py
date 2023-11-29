@@ -13,7 +13,7 @@ def home(request):
         obj = Task(name=name, priority=priority, date=date)
         obj.save()
     obj = Task.objects.all()
-    return render(request, 'index.html', {'obj': obj})
+    return render(request, 'home.html', {'obj': obj})
 
 
 def delete(request, id):
